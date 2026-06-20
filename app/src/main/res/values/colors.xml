@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="green_primary">#2D7A3A</color>
+    <color name="green_light">#F0F9F1</color>
+    <color name="bg_screen">#F5F7F5</color>
+    <color name="text_dark">#1A1A1A</color>
+    <color name="text_muted">#888888</color>
+    <color name="white">#FFFFFF</color>
+    <color name="red_badge">#E53935</color>
+    <color name="yellow_promo">#FFDD57</color>
+</resources>

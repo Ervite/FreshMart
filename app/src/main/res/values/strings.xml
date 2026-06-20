@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">ФрешМарт</string>
+    <string name="search_hint">Поиск свежих продуктов…</string>
+    <string name="cart_empty">Ваша корзина пуста</string>
+    <string name="add_to_cart">В корзину</string>
+    <string name="delivery_label">Доставка по адресу</string>
+    <string name="promo_code">Промокод: FRESH30</string>
+</resources>

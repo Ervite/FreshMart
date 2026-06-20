@@ -1,0 +1,282 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F5F7F5">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="20dp">
+
+        <!-- Header -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:layout_marginBottom="20dp">
+
+            <TextView
+                android:id="@+id/btn_back"
+                android:text="← "
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="24sp"
+                android:textColor="#2D7A3A"
+                android:clickable="true"
+                android:focusable="true"/>
+
+            <TextView
+                android:text="Оформление заказа"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:textColor="#1A1A1A"/>
+        </LinearLayout>
+
+        <!-- Order summary -->
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            app:cardCornerRadius="16dp"
+            app:cardElevation="4dp"
+            app:cardBackgroundColor="#FFFFFF">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="18dp">
+                <TextView
+                    android:text="🛒 Ваш заказ"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="15sp"
+                    android:textStyle="bold"
+                    android:textColor="#1A1A1A"
+                    android:layout_marginBottom="10dp"/>
+                <TextView
+                    android:id="@+id/order_summary_text"
+                    android:text="0 товаров"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="14sp"
+                    android:textColor="#555555"/>
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="#EEEEEE"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="10dp"/>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+                    <TextView
+                        android:text="Итого:"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:textSize="15sp"
+                        android:textStyle="bold"
+                        android:textColor="#1A1A1A"/>
+                    <TextView
+                        android:id="@+id/order_total_text"
+                        android:text="0 ₽"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="17sp"
+                        android:textStyle="bold"
+                        android:textColor="#2D7A3A"/>
+                </LinearLayout>
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+        <!-- MAP DELIVERY ADDRESS -->
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            app:cardCornerRadius="16dp"
+            app:cardElevation="4dp"
+            app:cardBackgroundColor="#FFFFFF">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="18dp">
+
+                <TextView
+                    android:text="🗺 Адрес доставки"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="15sp"
+                    android:textStyle="bold"
+                    android:textColor="#1A1A1A"
+                    android:layout_marginBottom="12dp"/>
+
+                <!-- Selected address display -->
+                <TextView
+                    android:id="@+id/map_address_text"
+                    android:text="📍 Адрес не выбран"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="13sp"
+                    android:textColor="#555555"
+                    android:background="#F2F4F2"
+                    android:padding="12dp"
+                    android:minLines="2"
+                    android:layout_marginBottom="12dp"/>
+
+                <!-- Open map button -->
+                <Button
+                    android:id="@+id/btn_open_map"
+                    android:layout_width="match_parent"
+                    android:layout_height="52dp"
+                    android:text="🗺  Выбрать на карте"
+                    android:textSize="14sp"
+                    android:textStyle="bold"
+                    android:textColor="#2D7A3A"
+                    android:backgroundTint="#E8F5E9"/>
+
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+        <!-- Region -->
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            app:cardCornerRadius="16dp"
+            app:cardElevation="4dp"
+            app:cardBackgroundColor="#FFFFFF">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="18dp">
+                <TextView
+                    android:text="🌍 Регион доставки"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="15sp"
+                    android:textStyle="bold"
+                    android:textColor="#1A1A1A"
+                    android:layout_marginBottom="10dp"/>
+                <RadioGroup
+                    android:id="@+id/region_group"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                    <RadioButton
+                        android:id="@+id/rb_russia"
+                        android:text="🇷🇺  Россия"
+                        android:layout_width="match_parent"
+                        android:layout_height="46dp"
+                        android:textSize="14sp"
+                        android:textColor="#1A1A1A"
+                        android:buttonTint="#2D7A3A"
+                        android:checked="true"/>
+                    <RadioButton
+                        android:id="@+id/rb_world"
+                        android:text="🌐  Международная доставка"
+                        android:layout_width="match_parent"
+                        android:layout_height="46dp"
+                        android:textSize="14sp"
+                        android:textColor="#1A1A1A"
+                        android:buttonTint="#2D7A3A"/>
+                </RadioGroup>
+                <TextView
+                    android:id="@+id/label_country"
+                    android:text="Страна"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="12sp"
+                    android:textColor="#444444"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginBottom="5dp"
+                    android:visibility="gone"/>
+                <EditText
+                    android:id="@+id/field_country"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:hint="Например: Казахстан"
+                    android:inputType="textCapWords"
+                    android:background="#F2F4F2"
+                    android:paddingStart="14dp"
+                    android:paddingEnd="14dp"
+                    android:textSize="14sp"
+                    android:visibility="gone"/>
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+        <!-- Payment -->
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="24dp"
+            app:cardCornerRadius="16dp"
+            app:cardElevation="4dp"
+            app:cardBackgroundColor="#FFFFFF">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="18dp">
+                <TextView
+                    android:text="💳 Способ оплаты"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="15sp"
+                    android:textStyle="bold"
+                    android:textColor="#1A1A1A"
+                    android:layout_marginBottom="10dp"/>
+                <RadioGroup
+                    android:id="@+id/payment_group"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                    <RadioButton
+                        android:id="@+id/rb_card"
+                        android:text="💳  Банковская карта"
+                        android:layout_width="match_parent"
+                        android:layout_height="46dp"
+                        android:textSize="14sp"
+                        android:textColor="#1A1A1A"
+                        android:buttonTint="#2D7A3A"
+                        android:checked="true"/>
+                    <RadioButton
+                        android:id="@+id/rb_cash"
+                        android:text="💵  Наличные при получении"
+                        android:layout_width="match_parent"
+                        android:layout_height="46dp"
+                        android:textSize="14sp"
+                        android:textColor="#1A1A1A"
+                        android:buttonTint="#2D7A3A"/>
+                    <RadioButton
+                        android:id="@+id/rb_sbp"
+                        android:text="📱  СБП (Система быстрых платежей)"
+                        android:layout_width="match_parent"
+                        android:layout_height="46dp"
+                        android:textSize="13sp"
+                        android:textColor="#1A1A1A"
+                        android:buttonTint="#2D7A3A"/>
+                </RadioGroup>
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+        <!-- Place Order -->
+        <Button
+            android:id="@+id/btn_place_order"
+            android:layout_width="match_parent"
+            android:layout_height="58dp"
+            android:text="Оформить заказ 🚀"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:textColor="#FFFFFF"
+            android:backgroundTint="#2D7A3A"/>
+
+    </LinearLayout>
+</ScrollView>
